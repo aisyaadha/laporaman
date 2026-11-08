@@ -37,6 +37,31 @@
                 <textarea id="report-desc" rows="4" required placeholder="Jelaskan urutan peristiwa secara terperinci..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-brand-blue shadow-sm"></textarea>
             </div>
 
+            <!-- Upload Bukti (Foto / Video / Rekaman) Opsional -->
+            <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 shadow-sm">
+                <div class="flex items-start space-x-3">
+                    <div class="p-2 rounded-lg bg-emerald-100 text-brand-emerald mt-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-sm font-bold text-slate-900">Unggah Bukti Pendukung <span class="text-xs font-normal text-slate-500">(Opsional)</span></h3>
+                        <p class="text-xs text-slate-600 mt-0.5">Lampirkan foto, video, atau rekaman audio sebagai bukti pendukung laporan. File disimpan terenkripsi di sisi browser (LocalStorage).</p>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label for="report-evidence" class="block cursor-pointer">
+                        <div id="evidence-dropzone" class="flex flex-col items-center justify-center w-full px-4 py-6 border-2 border-dashed border-slate-300 rounded-xl bg-white hover:border-brand-blue hover:bg-blue-50/40 transition">
+                            <svg class="w-8 h-8 text-slate-400 mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                            <p class="text-sm font-semibold text-slate-700">Klik untuk pilih file / seret &amp; lepas di sini</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Foto (JPG/PNG) · Video (MP4/MOV) · Rekaman (MP3/WAV) · Maks 10MB/file</p>
+                            <input type="file" id="report-evidence" multiple accept="image/*,video/*,audio/*" class="hidden">
+                        </div>
+                    </label>
+                </div>
+                <!-- Daftar File Terpilih -->
+                <div id="evidence-preview" class="hidden space-y-2"></div>
+            </div>
+
             <!-- Identitas Terenkripsi Opsional -->
             <div class="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3 shadow-sm">
                 <div class="flex items-start space-x-3">
